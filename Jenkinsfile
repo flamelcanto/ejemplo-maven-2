@@ -1,5 +1,4 @@
-import groovy.json.JsonSlurperClassic
-def jsonParse(def json) {
+import groovy.json.JsonSlurperClassic def jsonParse(def json) {
     new groovy.json.JsonSlurperClassic().parseText(json)
 }
 pipeline {
@@ -9,8 +8,8 @@ pipeline {
             steps {
                checkout(
                         [$class: 'GitSCM',
-                        branches: [[name: "jenkins" ]],
-                        userRemoteConfigs: [[url: 'https://github.com/tundervirld/clase2mod3seccion3']]])
+                        branches: [[name: "jenkinsfile-as-code" ]],
+                        userRemoteConfigs: [[url: 'https://github.com/flamelcanto/ejemplo-maven-2.git']]])
             }
         }
         stage("Paso 2: Compliar"){
